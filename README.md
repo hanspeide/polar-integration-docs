@@ -1,6 +1,6 @@
 ### Executive Summary
 
-[Example Polar embedded poll](http://assets-polarb-com.a.ssl.fastly.net/assets/phablet-embedded-2388c897bfdb5bc6b96133eac1f1353f.png)
+![Example Polar embedded poll](http://assets-polarb-com.a.ssl.fastly.net/assets/phablet-embedded-2388c897bfdb5bc6b96133eac1f1353f.png)
 
 Polar polls can be embedded on any website or native app (e.g. iOS/Android).  They look great on both due to [responsive design](http://polarb.com/publishers/poll_sets/926/preview).
 
