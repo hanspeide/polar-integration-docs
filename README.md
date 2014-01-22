@@ -1,5 +1,7 @@
 ### Executive Summary
 
+[Example Polar embedded poll](http://assets-polarb-com.a.ssl.fastly.net/assets/phablet-embedded-2388c897bfdb5bc6b96133eac1f1353f.png)
+
 Polar polls can be embedded on any website or native app (e.g. iOS/Android).  They look great on both due to [responsive design](http://polarb.com/publishers/poll_sets/926/preview).
 
 The technology behind Polar Embeddded Polls is a light-weight (~ 30kb), self-rendering javascript component wrapped in an iFrame based on industry standard third-party JS best practices.  
@@ -29,6 +31,8 @@ Here you would fill in the attribute **data-publisher** with your own publisher 
   scrolling="no" style="overflow: hidden;"
   src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926"></iframe>
 ```
+
+Here you would replace the attribute **jcole** with your own publisher name, and the **pollset_id** query param (926) with the ID for your poll set.  
 
 **Into native apps (e.g. iOS/Android)**  
 
