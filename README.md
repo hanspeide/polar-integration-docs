@@ -1,11 +1,6 @@
 ### Executive Summary
 
-Polar polls can be embedded on any website or native app (e.g. iOS/Android).  They look great on both due to [responsive design](http://polarb.com/publishers/poll_sets/926/preview) :
-
-<iframe seamless="seamless" style="border: none;" height="450" width="100%" 
-  scrolling="no" style="overflow: hidden;"
-  src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926">
-</iframe>
+Polar polls can be embedded on any website or native app (e.g. iOS/Android).  They look great on both due to [responsive design](http://polarb.com/publishers/poll_sets/926/preview).
 
 The technology behind Polar Embeddded Polls is a light-weight (~ 30kb), self-rendering javascript component wrapped in an iFrame based on industry standard third-party JS best practices.  
 
@@ -17,14 +12,23 @@ Polls can be embedded in serveral ways:
 
 * As a `<script>` tag within your web page.  This is the preferred approach for websites, as it allows Polar Embedded Polls to most flexibly respond to your layout.  For example:
 
-```<script src="http://assets-polarb-com.a.ssl.fastly.net/assets/polar-embedded.js" async="true" data-publisher="jcole" data-poll-set="926"></script>```
+```HTML
+<script src="http://assets-polarb-com.a.ssl.fastly.net/assets/polar-embedded.js" 
+ async="true" 
+ data-publisher="jcole" 
+ data-poll-set="926"></script>
+```
 
 Here you would fill in the attribute **data-publisher** with your own publisher name, and **data-poll-set** with the ID for your poll set.  
   
 * As an `<iframe>` tag within your web page.  When the `<script>` approach is not feasible (some content hosts do not permit inserting script tags), the iFrame approach will work.
 
-``` <iframe seamless="seamless" style="border: none;" height="450" width="100%" scrolling="no" style="overflow: hidden;"
-  src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926"></iframe>```
+```HTML
+<iframe seamless="seamless" style="border: none;" 
+  height="450" width="100%" 
+  scrolling="no" style="overflow: hidden;"
+  src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926"></iframe>
+```
 
 **Into native apps (e.g. iOS/Android)**  
 
@@ -32,12 +36,12 @@ The approach for native apps is to create a UIWebView (iOS) or WebView (Android)
 
 * iOS example
 
-<pre>
+```Objective-C
 NSString *fullURL = @"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926";
 NSURL *url = [NSURL URLWithString:fullURL];
 NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 [self.webView loadRequest:requestObj];
-</pre>
+```
 
 Here you would replace the attribute **jcole** with your own publisher name, and the **pollset_id** query param (926) with the ID for your poll set.  
 
