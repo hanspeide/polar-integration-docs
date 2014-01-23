@@ -38,7 +38,7 @@ Here you would replace the attribute **jcole** with your own publisher name, and
 
 **Into native apps (e.g. iOS/Android)**  
 
-The approach for native apps is to create a UIWebView (iOS) or WebView (Android) and load the page with the self-contained poll component:
+The approach for native apps is to create a UIWebView (iOS) or WebView (Android) and load the Polar [web page for the poll set](http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926) that contains the self-contained poll component:
 
 * iOS example
 
