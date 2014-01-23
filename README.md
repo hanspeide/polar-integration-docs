@@ -51,6 +51,8 @@ NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 
 Here you would replace the attribute **jcole** with your own publisher name, and the **pollset_id** query param (926) with the ID for your poll set.  
 
+See the included **example-ios-integration** XCode project in this repository for a working eample.
+
 
 ### Getting Started
 
@@ -74,7 +76,7 @@ Responsive design and custom publisher CSS allow Polar to flow with your layout 
 
 ### What about an API?
 
-There is an API to access the data directly.  However, it was written to support the Polar iOS app and polarb.com web-based client; it wasn't necessarily intended for third-party developers.  As such, there's a bit of cruft that has developed over time.  You can feel free to use it, but as it is not an "official" API, it may change at any time.  If your approach is not well-suited to the integration techniques described above, [Contact us](http://polarb.com/contact) for further information about the API.
+There is an API to access the data directly.  However, it was written to support the Polar iOS app and polarb.com web-based client; it wasn't necessarily intended for third-party developers.  As such, there's a bit of cruft that has developed over time.  You can feel free to use it, but as it is not an "official" API, it may change at any time.  If your approach is not well-suited to the integration techniques described above, [contact us](http://polarb.com/contact) for further information about the API.
 
 Here is an example of the API:
 
