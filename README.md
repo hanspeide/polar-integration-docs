@@ -25,6 +25,8 @@ There are two options for inserting into websites:
 
 Here you would fill in the attribute **data-publisher** with your own publisher name, and **data-poll-set** with the ID for your poll set.  
   
+See the included **test\_script\_embed.html** web page in this repository for a working eample.  
+  
 * As an `<iframe>` tag within your web page.  When the `<script>` approach is not feasible (some content hosts do not permit inserting script tags), the iFrame approach will work.
 
 ```HTML
@@ -35,6 +37,8 @@ Here you would fill in the attribute **data-publisher** with your own publisher 
 ```
 
 Here you would replace the attribute **jcole** with your own publisher name, and the **pollset_id** query param (926) with the ID for your poll set.  
+
+See the included **test\_iframe\_embed.html** web page in this repository for a working eample.
 
 **Into native apps (e.g. iOS/Android)**  
 
@@ -52,7 +56,6 @@ NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 Here you would replace the attribute **jcole** with your own publisher name, and the **pollset_id** query param (926) with the ID for your poll set.  
 
 See the included **example-ios-integration** XCode project in this repository for a working eample.
-
 
 ### Getting Started
 
