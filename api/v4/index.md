@@ -8,13 +8,53 @@ About the API:
 
 If you think using the API is for you, [contact us](http://polarb.com/contact).
 
-**API: get the most recent polls in Polar**
+### Production and test accounts
+
+The base URL for all **production** API's is:
+
 <pre>
-Request:
-GET https://polarb.com/api/v4/polls
+https://polarb.com/api/v4
 </pre>
 
-Example response:
+For **testing**, the base URL can point to our staging servers:
+
+<pre>
+https://polar-rails-staging.herokuapp.com/api/v4
+</pre>
+
+If you plan on using an API endpoint which requires authentication (see below), you will need to sign up at a polar account on each environment you wish to use:
+
+<pre>
+http://polarb.com/join (production)
+https://polar-rails-staging.herokuapp.com/join (testing)
+</pre>
+
+### API
+
+**endpoints which do not require authentication**
+
+* [Get a list of recent polls](#recentpolls)
+
+**endopint for authentication**
+
+* [Authentication](#authentication)
+
+**endpoints which require authentication**
+
+* [Vote on a poll](#voting)
+* [Create a poll](#createpoll)
+
+### <a name="recentpolls"></a> Get a list of recent polls
+
+Get a list of recent popular polls on Polar.  Returns a set of 10 polls.  To get the next 10 polls, use the `before_poll_id` parameter.
+
+<pre>
+GET /polls
+</pre>
+
+Name | Type | | Description
+-----|------|-|--------------
+`before_poll_id`| number | optional | Get the next set of polls prior to this poll id.
 
 ```JSON
 [
@@ -67,3 +107,54 @@ Example response:
   ...
 ]
 ```
+
+### <a name="authentication"></a> Authentication
+
+Log in and get user credentials.
+
+<pre>
+POST /users/authenticate
+</pre>
+
+Name | Type | | Description
+-----|------|-|--------------
+`email_or_username`| string | required | User's Polar username or email.  Case insensitive.
+`password`| string | required |User's Polar password.
+
+```JSON
+{
+  "userID": 1,
+  "username": "jcole",
+  "name": "Jeffrey",
+  "location": "Newton, MA",
+  "url": "/users/jcole",
+  "twitter_username": "jeff_cole",
+  "profilePhotoLarge": "http://polar-development-avatars-jeff.s3.amazonaws.com/000/000/001/1-large_retina-dc41e6a5a7d95012.jpg",
+  "profilePhotoSmall": "http://polar-development-avatars-jeff.s3.amazonaws.com/000/000/001/1-small_retina-dc41e6a5a7d95012.jpg",
+  "website": "",
+  "about": "About Me",
+  "pollsCreatedCount": 490,
+  "pollsVotedOnCount": 195,
+  "votesReceivedCount": 1274,
+  "favoriteCount": 60,
+  "favoritesReceivedCount": 39,
+  "commentsCount": 240,
+  "commentsReceivedCount": 307,
+  "followingCount": 3,
+  "followedByCount": 7,
+  "success": true,
+  "email": "jeff@test.com",
+  "confirmed": true,
+  "authToken": "xxAuthTokenHerexx",
+  "following_ids": [45, 337, 338],
+  "favorite_poll_ids": [294, 645, 652,]
+}
+```
+
+### <a name="voting"></a> Vote on a poll
+
+Voting
+
+### <a name="createpoll"></a> Create a poll
+
+Creating a poll
