@@ -39,7 +39,7 @@ The approach for native apps is largely the same as integrating into your websit
 * you will need to create a UIWebView (iOS) or WebView (Android) to contain the polls
 * you should directly load the [web page for the poll set](http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926) that contains poll component (instead of inserting the script tag mentioned above)
 
-* iOS example
+iOS example:
 
 ```Objective-C
 NSString *fullURL = @"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926";
