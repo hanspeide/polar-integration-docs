@@ -52,9 +52,9 @@ Get a list of recent popular polls on Polar.  Returns a set of 10 polls.  To get
 GET /polls
 </pre>
 
-Name | Type | | Description
------|------|-|--------------
-`before_poll_id`| number | optional | Get the next set of polls prior to this poll id.
+Name | Type | Required | Description
+-----|------|----------|--------------
+`before_poll_id` | number | optional | Get the next set of polls prior to this poll id.
 
 ```JSON
 [
@@ -116,8 +116,8 @@ Log in and get user credentials.
 POST /users/authenticate
 </pre>
 
-Name | Type | | Description
------|------|-|--------------
+Name | Type | Required | Description
+-----|------|----------|--------------
 `email_or_username`| string | required | User's Polar username or email.  Case insensitive.
 `password`| string | required |User's Polar password.
 
