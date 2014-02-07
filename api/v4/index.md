@@ -291,44 +291,44 @@ Returns:
 The response from creating your poll in last step will return JSON that has your S3 upload credentials in the `uploadData` attribute, e.g.:
 
 ```JSON
-  "uploadData": {
-    "postUrl": "https://polar-development-upload-jeff.s3.amazonaws.com",
-    "formData": {
-      "AWSAccessKeyId": "AKIAJNT4KV2W2N6XPSFA",
-      "policy": "eyJleHBpcmF0aW9uIjoiMjAxNC0wMS0xNFQwMTo1NDowMFoiLCJjb25kaXRpb25zIjpbWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw0MDk2MDAwXSx7IkNvbnRlbnQtVHlwZSI6ImltYWdlL2pwZWcifSx7ImtleSI6IjAwMC8wMDAvODE1LzgxNS0xLW9yaWdpbmFsLTZjNDJkYTUwZTg1YWI0MWMuanBlZyJ9LHsiYnVja2V0IjoicG9sYXItZGV2ZWxvcG1lbnQtdXBsb2FkLWplZmYifSx7ImFjbCI6InByaXZhdGUifV19",
-      "signature": "z7Wts+wj+df68RvWWziqfYn7OxI=",
-      "key": "000/000/815/815-1-original-6c42da50e85ab41c.jpeg",
-      "acl": "private",
-      "Content-Type": "image/jpeg"
-    }
+"uploadData": {
+  "postUrl": "https://polar-development-upload-jeff.s3.amazonaws.com",
+  "formData": {
+    "AWSAccessKeyId": "AKIAJNT4KV2W2N6XPSFA",
+    "policy": "eyJleHBpcmF0aW9uIjoiMjAxNC0wMS0xNFQwMTo1NDowMFoiLCJjb25kaXRpb25zIjpbWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw0MDk2MDAwXSx7IkNvbnRlbnQtVHlwZSI6ImltYWdlL2pwZWcifSx7ImtleSI6IjAwMC8wMDAvODE1LzgxNS0xLW9yaWdpbmFsLTZjNDJkYTUwZTg1YWI0MWMuanBlZyJ9LHsiYnVja2V0IjoicG9sYXItZGV2ZWxvcG1lbnQtdXBsb2FkLWplZmYifSx7ImFjbCI6InByaXZhdGUifV19",
+    "signature": "z7Wts+wj+df68RvWWziqfYn7OxI=",
+    "key": "000/000/815/815-1-original-6c42da50e85ab41c.jpeg",
+    "acl": "private",
+    "Content-Type": "image/jpeg"
   }
+}
 ```
 
 You can use this information to post the image to the S3 `postUrl` with the provided credentials.  Here is an example of how that would be done in JS with jQuery:
 
 ```Javascript
-    var fd = new FormData();
-    fd.append('AWSAccessKeyId', formData.AWSAccessKeyId);
-    fd.append('policy', formData.policy);
-    fd.append('signature', formData.signature);
-    fd.append('key', formData.key);
-    fd.append('acl', formData.acl);
-    fd.append('Content-Type', "image/jpeg");
-    fd.append('file', myImageFile, 'poll-image.jpeg');
+var fd = new FormData();
+fd.append('AWSAccessKeyId', formData.AWSAccessKeyId);
+fd.append('policy', formData.policy);
+fd.append('signature', formData.signature);
+fd.append('key', formData.key);
+fd.append('acl', formData.acl);
+fd.append('Content-Type', "image/jpeg");
+fd.append('file', myImageFile, 'poll-image.jpeg');
 
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: fd,
-      processData: false,  // tell jQuery not to process the data
-      contentType: false   // tell jQuery not to set contentType
-    })
-    .done(function(data) {
-      // success!!
-    })
-    .fail(function( jqXHR, textStatus, errorThrown ) {
-      // error
-    });
+$.ajax({
+  url: url,
+  type: "POST",
+  data: fd,
+  processData: false,  // tell jQuery not to process the data
+  contentType: false   // tell jQuery not to set contentType
+})
+.done(function(data) {
+  // success!!
+})
+.fail(function( jqXHR, textStatus, errorThrown ) {
+  // error
+});
 ``` 
 
 **Notify Polar that the images have finished uploading**
@@ -343,14 +343,13 @@ Param | Type | Required | Description
 -----|------|----------|--------------
 poll_id| number | required | The ID of the poll that we are creating.  Returned in the response from the first step.
 image_id | number | required | The ID of the image that was uploaded.  Returned in the response from the first step. (Note: the current version of Polar only uses one image per poll, so future verisons of the API can drop the requirement for this parameter.)
+auth_token | string | required | Then Polar authentication token for the user creating the poll.  As returned by *authToken* in the [authentication](#authentication) endpoint.
 first_image_full_url| string | optional | The URL for the the image for the first choice (if applicable).
 first_image_context_url| string | optional | The URL for the web site where the image for the first choice can be found (if applicable).
 first_public_domain| boolean | optional | Indicates whether the image for the first choice is public domain
 second_image_full_url| string | optional | The URL for the the image for the second choice (if applicable).
 second_image_context_url| string | optional | The URL for the web site where the image for the second choice can be found (if applicable).
 second_public_domain| boolean | optional | Indicates whether the image for the second choice is public domain
-
-**Note:** one of either `auth_token` or `anonymous_user_id` is required.
 
 Returns:
 
