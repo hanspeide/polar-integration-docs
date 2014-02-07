@@ -1,12 +1,16 @@
 ## Polar API
 
-About the API:
+Requirements for using the Polar API:
 
-* the API was originally written to support our native iOS app and web client, not for third-party developers.  As such, there are a few items that could be cleaned up.  Furthermore, as our app evolves, the API may evolve as well
-* Polar reserves the right to revoke developer accounts if the integration does not meet our standards
-* integrated Polar content must include Polar branding
+* Polar reserves the right to revoke developer accounts if the integration does not meet our standards for appearance or interaction.
+* The presenation of Polar content must include Polar branding.
+* [Contact us](http://polarb.com/contact) and let us know you are interested in using it: we'll talk through the two points above.
 
-If you think using the API is for you, [contact us](http://polarb.com/contact).
+**Caveats**
+
+* The API was originally written to support our native iOS app and web client, not for third-party developers.  As such, there is much that should be cleaned up in a real developer-facing API.  
+* On that note, huge apologies for the mixture of CamelCasing and under_scores.  It's a long story.  But keep an eye out for the exact spellings of the parameters for your endpoint.
+* Keep in mind that as our app evolves, the API may evolve as well.
 
 ### Production and test accounts
 
@@ -52,9 +56,9 @@ Get a list of recent popular polls on Polar.  Returns a set of 10 polls.  To get
 GET /polls
 </pre>
 
-Name | Type | Required | Description
+Param | Type | Required | Description
 -----|------|----------|--------------
-`before_poll_id` | number | optional | Get the next set of polls prior to this poll id.
+before_poll_id | number | optional | Get the next set of polls prior to this poll id.
 
 ```JSON
 [
@@ -110,16 +114,20 @@ Name | Type | Required | Description
 
 ### <a name="authentication"></a> Authentication
 
+**For a user who has a Polar account**
+
 Log in and get user credentials.
 
 <pre>
 POST /users/authenticate
 </pre>
 
-Name | Type | Required | Description
+Param | Type | Required | Description
 -----|------|----------|--------------
-`email_or_username`| string | required | User's Polar username or email.  Case insensitive.
-`password`| string | required |User's Polar password.
+email_or_username| string | required | User's Polar username or email.  Case insensitive.
+password | string | required |User's Polar password.
+
+Returns:
 
 ```JSON
 {
@@ -151,9 +159,47 @@ Name | Type | Required | Description
 }
 ```
 
+**For a user who does not have a Polar account**
+
+Get anonymous user ID credentials
+
+<pre>
+GET /users/me
+</pre>
+
+Returns:
+
+```JSON
+{
+  "anonymousUserID": 'd611093317bbe73c6327773b551af0c646b8cb9cefe57ef7b0dd3862c711' 
+}
+```
+
 ### <a name="voting"></a> Vote on a poll
 
-Voting
+Vote on a poll for a user.  Note: voting multiple times on a poll for the same user will not create an additional vote: it will either switch the vote choice (if the choice has changed) or result in a no-op (if the choice remained the same).
+
+<pre>
+POST /polls/:poll_id/votes
+</pre>
+
+Param | Type | Required | Description
+-----|------|----------|--------------
+poll_id| number | required | The ID of the poll to vote on.
+password | string | required |User's Polar password.
+option | number | required | The choice the user is voting on: either *1* (first choice) or *2* (second choice).
+auth_token | string | optional | Then Polar authentication token for the user voting, if the user has a Polar account.  As returned by *authToken* in the [authentication](#authentication) endpoint.
+anonymous_user_id | string | optional | Then identification of the user voting, if the user does not have a Polar account. 
+
+**Note:** one of either `auth_token` or `anonymous_user_id` is required.
+
+Returns:
+
+```JSON
+{ 
+  "success": true
+}
+```
 
 ### <a name="createpoll"></a> Create a poll
 
