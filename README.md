@@ -1,4 +1,4 @@
-## Integrating Polar Polls into your Website or App
+## Polar SDK and API information
 
 ![Example Polar embedded poll](https://polar-production-web-assets.s3.amazonaws.com/pub-promo-addsite.png)
 
