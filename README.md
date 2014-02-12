@@ -2,30 +2,35 @@
 
 ![Example Polar embedded poll](https://polar-production-web-assets.s3.amazonaws.com/pub-promo-addsite.png)
 
-[Polar polls](http://polarb.com/polls) can be integrated into your website or native app.  There are two ways to do this:
+[Polar](http://polarb.com) polls can be integrated into your website or native app in several ways:
  
-* using a `<script>` [tag we provide](/embed_component.md) that will load a custom Javascript component inside an iframe.  We handle displaying the polls and voting for you.
-* using our HTTP/JSON-based [API](/api/v4/index.md).  You handle rendering the polls and allowing users to vote.
-
 ### Embed tag
 
-The easiest way is via the script tag, which loads a light-weight, self-rendering javascript component wrapped in an iFrame.  This component is based on industry standard third-party JS best practices to ensure safe usage in your site.
+We can provide you with a `<script>` or `<iframe>` tag that you can embed in your web page.  This tag will load a custom Javascript component that responsively renders the polls and handles user interaction such as voting and poll navigation.
 
-With this approach, we've done all the hard work to make the polls
-[look good at various sizes](http://polarb.com/publishers/poll_sets/926/preview) and for various clients.  Plus, we've handled all the logic for transitioning between polls and allowing users to vote on polls.  
+[Embed tag documentation](/embed/embed_component.md)
 
-If you already see polls on Polar that you want to embed, or can make your own polls using our [web based poll creation tool](http://www.polarb.com/howtos/makepolls), this is the way to go.  Start reading about the [embed component](/embed_component.md) here.
+### HTTPS/JSON API
 
-### API
+You can directly use Polar's HTTPS/JSON-based API to retreive poll data.  In this case, you would be responsible for rendering the polls and handling user interaction such as voting and poll navigation.
 
-If you require a tighter integration of Polar polls into your app, you can use our API to pull poll data and render the poll yourself.   You will also need handle the poll transition and voting actions yourself, using our API.
+[API documenation](/api/v4/index.md)
 
-Using the API comes with some caveats:
+### iOS SDK
 
-* the API was originally written to support our native iOS app and web client, not for third-party developers.  As such, there are a few items that could be cleaned up.  Furthermore, as our app evolves, the API may evolve as well
-* Polar reserves the right to revoke developer accounts if the integration does not meet our standards
-* integrated Polar content must include Polar branding
+You can use Polar's iOS SDK to integrate polls into your native iOS app.
 
-If you think using the API is for you, [contact us](http://polarb.com/contact), and head over to the [API docs](/api/v4/index.md).
+[iOS SDK documentation](/ios-sdk/ios-sdk.md)
 
+---
+
+### Creating a Polar account
+
+For any of the solutions above, you will need a Polar user account.
+
+Create a development account:
+[https://polar-rails-staging.herokuapp.com/join]()
+
+Create a production account: 
+[http://polarb.com/join]()
 

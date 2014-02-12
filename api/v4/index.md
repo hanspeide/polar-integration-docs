@@ -6,16 +6,6 @@ Requirements for using the Polar API:
 * The presenation of Polar content must include Polar branding.
 * [Contact us](http://polarb.com/contact) and let us know you are interested in using it: we'll talk through the two points above.
 
-**Caveats**
-
-The API was originally written to support our native iOS app and web client, not third-party developers.  As such, there is much that would be cleaned up in a "real" developer-facing API.  For example:
-
-* The query parameters and returned JSON attributes are a mixture of CamelCasing and under_scores.  Long story!  But keep an eye out for the exact spellings of the parameters for your endpoint.
-* Creating a poll currently requires three steps.  It also requires the client to composite any "side-by-side" poll images into a single image.
-* The API originally provided for multiple poll choices and images, but at this point all polls are 2 choices and 1 image.  So some complexity could be removed from the returned data structures.
-
-And keep in mind that we are developing this API for internal use, so it may change as our needs change.
-
 ### Production and test accounts
 
 The base URL for all **production** API's is:
@@ -32,21 +22,55 @@ https://polar-rails-staging.herokuapp.com/api/v4
 
 If you plan on using an API endpoint which requires authentication (see below), you will need to sign up at a polar account on each environment you wish to use:
 
-<pre>
-http://polarb.com/join (production)
-https://polar-rails-staging.herokuapp.com/join (testing)
-</pre>
+Create a development account:
+[https://polar-rails-staging.herokuapp.com/join]()
+
+Create a production account: 
+[http://polarb.com/join]()
 
 ### API endpoints
 
+* [Get user information](#userinfo)
 * [Authentication](#authentication)
 * [Get a list of recent polls](#recentpolls)
 * [Vote on a poll](#voting)
 * [Create a poll](#createpoll)
 
-### <a name="authentication"></a> Authentication
+### <a name="userinfo"></a> Get user information
 
-**For a user who has a Polar account**
+Get credentials for the current user viewing the polls
+
+**If the user is not authenticated**
+
+<pre>
+GET /users/me
+</pre>
+
+Returns the following if the user **is not authenticated:**
+
+```JSON
+{
+  "anonymousUserID": "d611093317bbe73c6327773b551af0c646b8cb9cefe57ef7b0dd3862c711"
+}
+```
+
+Returns the following if the user **is authenticated:**
+
+```JSON
+{
+  "userID": 1,
+  "username": "jcole",
+  "name": "Jeffrey",
+  "location": "Newton, MA",
+  "url": "/users/jcole",
+  "twitter_username": "jeff_cole",
+  "profilePhotoLarge": "http://polar-development-avatars-jeff.s3.amazonaws.com/000/000/001/1-large_retina-dc41e6a5a7d95012.jpg",
+  "profilePhotoSmall": "http://polar-development-avatars-jeff.s3.amazonaws.com/000/000/001/1-small_retina-dc41e6a5a7d95012.jpg",
+  "authToken": "xxAuthTokenHerexx",
+}
+```
+
+### <a name="authentication"></a> Authentication
 
 Log in and get user credentials.
 
@@ -88,22 +112,6 @@ Returns:
   "authToken": "xxAuthTokenHerexx",
   "following_ids": [45, 337, 338],
   "favorite_poll_ids": [294, 645, 652,]
-}
-```
-
-**For a user who does not have a Polar account**
-
-Get anonymous user ID credentials
-
-<pre>
-GET /users/me
-</pre>
-
-Returns:
-
-```JSON
-{
-  "anonymousUserID": "d611093317bbe73c6327773b551af0c646b8cb9cefe57ef7b0dd3862c711"
 }
 ```
 

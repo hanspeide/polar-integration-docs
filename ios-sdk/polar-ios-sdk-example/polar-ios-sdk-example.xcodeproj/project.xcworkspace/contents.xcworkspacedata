@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:embedded-test.xcodeproj">
+      location = "self:polar-ios-sdk-example.xcodeproj">
    </FileRef>
 </Workspace>

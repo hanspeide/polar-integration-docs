@@ -1,18 +1,18 @@
 //
-//  embedded_testTests.m
-//  embedded-testTests
+//  polar_ios_sdk_exampleTests.m
+//  polar-ios-sdk-exampleTests
 //
-//  Created by Jeff on 1/22/14.
+//  Created by Jeff on 2/12/14.
 //  Copyright (c) 2014 Jeff. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface embedded_testTests : XCTestCase
+@interface polar_ios_sdk_exampleTests : XCTestCase
 
 @end
 
-@implementation embedded_testTests
+@implementation polar_ios_sdk_exampleTests
 
 - (void)setUp
 {

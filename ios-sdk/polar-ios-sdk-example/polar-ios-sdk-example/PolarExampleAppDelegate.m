@@ -1,14 +1,14 @@
 //
-//  TestAppDelegate.m
-//  embedded-test
+//  PolarExampleAppDelegate.m
+//  polar-ios-sdk-example
 //
-//  Created by Jeff on 1/22/14.
+//  Created by Jeff on 2/12/14.
 //  Copyright (c) 2014 Jeff. All rights reserved.
 //
 
-#import "TestAppDelegate.h"
+#import "PolarExampleAppDelegate.h"
 
-@implementation TestAppDelegate
+@implementation PolarExampleAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
