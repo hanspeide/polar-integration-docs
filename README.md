@@ -29,8 +29,8 @@ You can use Polar's iOS SDK to integrate polls into your native iOS app.
 For any of the solutions above, you will need a Polar user account.
 
 Create a development account:
-[https://polar-rails-staging.herokuapp.com/join]()
+[https://polar-rails-staging.herokuapp.com/join](https://polar-rails-staging.herokuapp.com/join)
 
 Create a production account: 
-[http://polarb.com/join]()
+[http://polarb.com/join](http://polarb.com/join)
 
