@@ -4,6 +4,10 @@ You can load a `<script>` or `<iframe>` tag into your website.  This tag loads a
 
 [Example of embedded polls with responsive sizing](http://polarb.com/publishers/poll_sets/926/preview)
 
+<iframe seamless="seamless" style="border: none;" scrolling="no" style="overflow: hidden;"
+ height="450" width="100%" 
+ src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926"></iframe>
+
 [Techical details about the Javascript component](#techdetails)
 
 ### script tag
