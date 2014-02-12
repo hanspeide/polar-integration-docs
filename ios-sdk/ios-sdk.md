@@ -3,7 +3,7 @@
 The iOS SDK is a drop-in Objective-C class that you can use in your iOS project.  
 
 Simply drop these classes into your iOS project:
-[Polar iOS SDK classes](ios-sdk/polar-ios-sdk-example/polar-ios-sdk-example/polar-ios-sdk)
+[Polar iOS SDK classes](polar-ios-sdk-example/polar-ios-sdk-example/polar-ios-sdk)
 
 Example:
 
