@@ -34,6 +34,12 @@ With Polar's iOS SDK, you can integrate polls directly into your native iOS app.
 
 [iOS SDK documentation](/ios-sdk)
 
+#### Android SDK
+
+We don't have an official Android SDK, but one of our great community members, [Hans Petter Eide](https://github.com/hanspeide) created this working version of Polar for Android:
+
+[https://github.com/hanspeide/polar-android](https://github.com/hanspeide/polar-android)
+
 #### HTTPS/JSON API
 
 If you prefer to handle the display and user interaction yourself, you can use Polar's HTTPS/JSON-based API to access the data directly.  Note that if you are displaying content yourself, you must adhere to Polar's [display guidelines](/display-guidelines).
