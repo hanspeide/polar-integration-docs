@@ -1,55 +1,61 @@
-## Polar SDK and API information
+## Polar SDK and API documentation
 
 ![Example Polar embedded poll](https://polar-production-web-assets.s3.amazonaws.com/pub-promo-addsite.png)
 
 [Polar](http://polarb.com) polls can be integrated into your website or native app in several ways:
  
-### Embed tag
+#### Embed tag
 
-We can provide you with a `<script>` or `<iframe>` tag that you can embed in your web page.  This tag will load a custom Javascript component that responsively renders the polls and handles user interaction such as voting and poll navigation.
+With a `<script>` or `<iframe>` tag that you embed in your web page, we will responsively render your polls and handle all the user interaction such as voting and poll navigation.  We recommend this approach, as we've done all the hard work for you:
 
 [Embed tag documentation](/embed)
 
-### HTTPS/JSON API
+#### HTTPS/JSON API
 
-You can directly use Polar's HTTPS/JSON-based API to retreive poll data.  In this case, you would be responsible for rendering the polls and handling user interaction such as voting and poll navigation.
+If you prefer to handle the display and user interaction yourself, you can use Polar's HTTPS/JSON-based API to access the data directly.
 
 [API documenation](/api/v4)
 
-### iOS SDK
+#### iOS SDK
 
-You can use Polar's iOS SDK to integrate polls into your native iOS app.
+With Polar's iOS SDK, you can integrate polls directly into your native iOS app.
 
 [iOS SDK documentation](/ios-sdk)
 
----
+### Getting the poll content
 
-### Creating a Polar account
+#### Types of things you can embed
 
-For any of the solutions above, you will need a Polar user account.
+You can embed either a single poll, or a set of polls ("poll set").   They look the same embedded in your site.  The only difference is a poll set will automatically transition to the next poll after the user votes.  A poll set is a great way to ask a series of related questions.
 
-Create a development account:
-[https://polar-rails-staging.herokuapp.com/join](https://polar-rails-staging.herokuapp.com/join)
+[Example of a single embedded poll](http://www.forbes.com/sites/davidthier/2013/11/05/the-5-best-reasons-for-buying-the-xbox-one-instead-of-a-ps4/)
 
-Create a production account: 
+[Example of an embedded poll set](http://9to5mac.com/2013/11/06/iphone-5s-vs-nexus-5-photo-smackdown-vote-which-images-are-the-best/)
+
+#### Where do I get the polls and poll sets from?
+
+It's easy to create your own great looking polls and poll sets on Polar.  But if you'd like to use some of the polls our community has [already made](http://polarb.com/polls), you can do that, too.   Either way, our "How To" will help you get started:
+
+[How to create polls and poll sets on Polar](http://www.polarb.com/howtos)
+
+### Getting started
+
+The first thing you should do is create a Polar account:
+
 [http://polarb.com/join](http://polarb.com/join)
 
----
+We recommend also creating a test account also, as a sandbox for your test content:
 
-### Creating Polls
+[https://polar-rails-staging.herokuapp.com/join](https://polar-rails-staging.herokuapp.com/join)
 
-On the Polar website, you can create great-looking polls.  These polls can then be embedded on your site using the tools above.
+Next, check out the "How Tos" to start making some great-looking polls or poll sets:
 
-You can also create sets of polls that can be embedded on your site.  With Poll Sets, when a user votes on one poll in a set, the next poll appears automatically.
+[How To's](http://www.polarb.com/howtos)
 
-For more information about how to create polls and poll sets:
+Then, pick whichever of the integration methods above (embed code, API, iOS SDK) you prefer, and you're ready to start display Polar polls in your site.
 
-[Polar How-To's](http://www.polarb.com/howtos)
+### Contact us
 
----
-
-### Conctact Us
-
-We're happy to lend a hand or answer questions:
+Need a hand?  We're happy to help you get started or answer any questions you might have:
 
 [Contact us](mailto:support@polarb.com)
