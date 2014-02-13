@@ -45,3 +45,11 @@ You can also create sets of polls that can be embedded on your site.  With Poll 
 For more information about how to create polls and poll sets:
 
 [Polar How-To's](http://www.polarb.com/howtos)
+
+---
+
+### Conctact Us
+
+We're happy to lend a hand or answer questions:
+
+[Contact us](mailto:support@polarb.com)

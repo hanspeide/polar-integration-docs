@@ -4,7 +4,7 @@ Requirements for using the Polar API:
 
 * Polar reserves the right to revoke developer accounts if the integration does not meet our standards for appearance or interaction.
 * The presenation of Polar content must include Polar branding.
-* [Contact us](http://polarb.com/contact) and let us know you are interested in using it: we'll talk through the two points above.
+* [Contact us](mailto:support@polarb.com) and let us know you are interested in using it: we'll talk through the two points above.
 
 ### Production and test accounts
 
