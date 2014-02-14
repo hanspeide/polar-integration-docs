@@ -33,6 +33,8 @@ See the included [test\_script\_embed.html](test_script_embed.html) web page in 
 
 Although the `<script>` tag is the recommended method, some hosting providers may not let you embed a script page into your page (for example, Wordpress.com).  In this case, use the following `<iframe>` instead.  It will load the same content as the script tag.  However, you will need to specify a fixed height and width for the iframe container: we can't responsively resize this iframe based on your clients' screen sizes.
 
+Note that the minimum space needed for polls to render is **300x300px**.
+
 Here is an example, set to height of 450px:
 
 ```HTML
