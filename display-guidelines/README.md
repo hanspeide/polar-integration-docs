@@ -9,3 +9,9 @@
 #### Best practices
 
 * Polar embedded polls look best at a minimum size of 300x300.
+
+#### <a name="customization"></a> Customizing appearance (TODO)
+
+* fonts 
+* colors
+* external CSS

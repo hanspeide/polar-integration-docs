@@ -39,6 +39,8 @@ There are a few options for embedding polls:
 
 [iOS SDK](/ios-sdk): Cocoa Touch classes that you can include in your iOS project.  The classes will create a UIWebView containing the embedded polls.
 
+The display of the polls can be customized to match the font, colors, and look of your site.  See more about [display customizations](/display-guidelines#customization)
+
 ### Non-embed options
 
 [API](/api/v4): If you prefer to handle the display and user interaction yourself, you can use Polar's HTTPS/JSON-based API to access the data directly.  Note that your display of Polar content must adhere to our [display guidelines](/display-guidelines).
