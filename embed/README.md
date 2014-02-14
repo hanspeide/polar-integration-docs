@@ -29,7 +29,7 @@ Some hosting providers may not let you embed a script page into your content (fo
 Example:
 
 ```HTML
-<iframe seamless="seamless" style="border: none;" scrolling="no" style="overflow: hidden;"
+<iframe seamless="seamless" style="border: none; overflow: hidden;" scrolling="no"
  height="450" width="100%" 
  src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926"></iframe>
 ```
