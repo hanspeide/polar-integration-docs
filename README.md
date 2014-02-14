@@ -39,7 +39,8 @@ There are a few options for embedding polls:
 
 [iOS SDK](/ios-sdk): Cocoa Touch classes that you can include in your iOS project.  The classes will create a UIWebView containing the embedded polls.
 
-The display of the polls can be customized to match the font, colors, and look of your site.  See more about [display customizations](/display-guidelines#customization)
+The display of the polls can be customized to match the font, colors, and look of your site. <br />
+[Display customizations](/display-guidelines#customization).
 
 ### Non-embed options
 

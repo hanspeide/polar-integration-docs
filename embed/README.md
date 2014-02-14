@@ -2,10 +2,10 @@
 
 You can embed polls on your website via a `<script>` or `<iframe>` tag as described below.  The tag loads a light-weight (~30kb), self-rendering Javascript component wrapped in an iframe.  This component responsively renders the polls and handles user interaction such as voting and poll navigation. 
 
-The script tag is the recommended appraoche, since it can resize the embed based on your page content and the client's screen size.  With the the iframe method, you must specify the width and height of the iframe.  So, it is your responsibility to adjust this iframe size on each page load to appropriately match the client's screen size.
+The script tag is the recommended appraoch, since it can resize the embed based on your page content and the client's screen size.  With the the iframe method, you must specify the width and height of the iframe.  So, it is your responsibility to adjust this iframe size on each page load to appropriately match the client's screen size.
 
 Either way, once the embedded polls container size is set, Polar will responsively size the poll content for the container: <br />
-[example of responsive sizing](http://polarb.com/publishers/poll_sets/926/preview)
+[Example of responsive sizing](http://polarb.com/publishers/poll_sets/926/preview)
 
 ### Using the `<script>` tag
 
@@ -23,9 +23,9 @@ Param | Type | Required | Description
 data-publisher| string | required | User's Polar username or email.  Case insensitive.
 data-poll-set | number | optional | Poll Set ID.  Use this parameter if you want to embed a poll set.
 data-poll-id | number | optional | Poll ID. Use this parameter if you want to embed a single poll.
-data-placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".  Use this when you want don't want to embed a specific poll or poll set.  Instead, this allows you to swap in a new poll or poll set to this placement instantaneously via the Polar website.
+data-placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".
 
-**Note:** one of either `data-poll-set`, `data-poll-id`, or `data-placement` is required.
+**Note:** one of either `data-poll-set`, `data-poll-id`, or `data-placement` is required.  Use `data-placement` when you want don't want to embed a specific poll or poll set.  Instead, this allows you to swap in a new poll or poll set to this placement instantaneously via the Polar website.
   
 See the included [test\_script\_embed.html](test_script_embed.html) web page in this repository for a working eample.
 
@@ -46,9 +46,9 @@ Param | Type | Required | Description
 publisher name | string | required | User's Polar username or email.  Case insensitive.
 pollset_id | number | optional | Poll Set ID.  Use this parameter if you want to embed a poll set.
 poll_id | number | optional | Poll ID. Use this parameter if you want to embed a single poll.
-placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".  Use this when you want don't want to embed a specific poll or poll set.  Instead, this allows you to swap in a new poll or poll set to this placement instantaneously via the Polar website.
+placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".
 
-**Note:** one of either `pollset_id` or `poll_id` or `placement` is required.  
+**Note:** one of either `pollset_id` or `poll_id` or `placement` is required.  Use `placement` when you want don't want to embed a specific poll or poll set.  Instead, this allows you to swap in a new poll or poll set to this placement instantaneously via the Polar website.
 
 See the included [test\_iframe\_embed.html](test_iframe_embed.html) web page in this repository for a working eample.
 
