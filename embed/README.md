@@ -14,11 +14,17 @@ Example:
 ```HTML
 <script src="http://assets-polarb-com.a.ssl.fastly.net/assets/polar-embedded.js" 
  async="true" 
- data-publisher="jcole" 
+ data-publisher="jcole"
  data-poll-set="926"></script>
 ```
 
-Here you would fill in the attribute **data-publisher** with your own publisher name, and **data-poll-set** with the ID for your poll set.  
+Param | Type | Required | Description
+-----|------|----------|--------------
+data-publisher| string | required | User's Polar username or email.  Case insensitive.
+data-poll-set | number | optional | Poll Set ID.  Use this parameter if you want to embed a poll set.
+data-poll-id | number | optional | Poll ID. Use this parameter if you want to embed a single poll.
+
+**Note:** one of either `data-poll-set` or `data-poll-id` is required.
   
 See the included [test\_script\_embed.html](test_script_embed.html) web page in this repository for a working eample.
 
@@ -31,10 +37,16 @@ Example:
 ```HTML
 <iframe seamless="seamless" style="border: none; overflow: hidden;" scrolling="no"
  height="450" width="100%" 
- src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/jcole/embedded_polls/iframe?pollset_id=926"></iframe>
+ src="http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/<publisher name>/embedded_polls/iframe?pollset_id=<poll set ID>"></iframe>
 ```
 
-Here you would replace the attribute **jcole** with your own publisher name, and the **pollset_id** query param (926) with the ID for your poll set.  
+Param | Type | Required | Description
+-----|------|----------|--------------
+publisher name | string | required | User's Polar username or email.  Case insensitive.
+pollset_id | number | optional | Poll Set ID.  Use this parameter if you want to embed a poll set.
+poll_id | number | optional | Poll ID. Use this parameter if you want to embed a single poll.
+
+**Note:** one of either `pollset_id` or `poll_id` is required.  
 
 See the included [test\_iframe\_embed.html](test_iframe_embed.html) web page in this repository for a working eample.
 
