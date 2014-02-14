@@ -2,7 +2,7 @@
 
 You can embed polls on your website via a `<script>` or `<iframe>` tag as described below.  The tag loads a light-weight (~30kb), self-rendering Javascript component wrapped in an iframe.  This component responsively renders the polls and handles user interaction such as voting and poll navigation. 
 
-The script tag is the recommended appraoch, since it can resize the embed based on your page content and the client's screen size.  With the the iframe method, you must specify the width and height of the iframe.  So, it is your responsibility to adjust this iframe size on each page load to appropriately match the client's screen size.
+The script tag is the recommended approach, since it can resize the embed based on your page content and the client's screen size.  With the the iframe method, you must specify the width and height of the iframe.  So, it is your responsibility to adjust this iframe size on each page load to appropriately match the client's screen size.
 
 Either way, once the embedded polls container size is set, Polar will responsively size the poll content for the container: <br />
 [Example of responsive sizing](http://polarb.com/publishers/poll_sets/926/preview)
@@ -20,7 +20,7 @@ This is the recommended method, as Polar can resize to the alloted space on your
 
 Param | Type | Required | Description
 -----|------|----------|--------------
-data-publisher| string | required | User's Polar username or email.  Case insensitive.
+data-publisher| string | required | User's Polar username.
 data-poll-set | number | optional | Poll Set ID.  Use this parameter if you want to embed a poll set.
 data-poll-id | number | optional | Poll ID. Use this parameter if you want to embed a single poll.
 data-placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".
@@ -43,7 +43,7 @@ In this example, the iframe is set to height of 450px:
 
 Param | Type | Required | Description
 -----|------|----------|--------------
-publisher name | string | required | User's Polar username or email.  Case insensitive.
+publisher name | string | required | User's Polar username.
 pollset_id | number | optional | Poll Set ID.  Use this parameter if you want to embed a poll set.
 poll_id | number | optional | Poll ID. Use this parameter if you want to embed a single poll.
 placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".
