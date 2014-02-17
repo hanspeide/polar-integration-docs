@@ -2,7 +2,7 @@
 
 ### How to add Polar polls to your site or native app
 
-![Example Polar embedded poll](https://polar-production-web-assets.s3.amazonaws.com//api-docs/pub-promo-addsite.png)
+![Example Polar embedded poll](https://polar-production-web-assets.s3.amazonaws.com/api-docs/pub-promo-addsite.png)
 
 [Polar](http://polarb.com) polls are a great way to give your audience a voice.  This documentation is intended for developers who want to integrate Polar polls into their website or native app.
 
