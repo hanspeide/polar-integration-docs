@@ -1,4 +1,4 @@
-## iOS SDK
+## Polar iOS SDK
 
 ![Example of Polar iOS SDK integration](https://polar-production-web-assets.s3.amazonaws.com/api-docs/example-polar-ios-sdk.png)
 
@@ -35,6 +35,8 @@ The class files: <br />
 ---
 
 ### Polar Class API
+
+**Version 1.0**
 
 #### Init
 
