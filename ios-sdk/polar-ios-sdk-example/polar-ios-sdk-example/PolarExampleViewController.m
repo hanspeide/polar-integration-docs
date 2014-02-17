@@ -37,8 +37,9 @@
     // set the frame for your embed: 300x300 minimum recommended
     [[polar pollView] setFrame:CGRectMake(0, 30, 320, 320)];
     
-    // load your poll set
-    [polar loadPollSet:@926];
+    // load your polls
+    [polar loadPollSet:@926]; // example of a poll set
+    // [polar loadPoll:@98779]; // example of a single poll
 }
 
 - (void)didReceiveMemoryWarning

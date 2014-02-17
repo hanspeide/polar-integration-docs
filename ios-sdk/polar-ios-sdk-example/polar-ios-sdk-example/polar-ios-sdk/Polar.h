@@ -22,6 +22,9 @@
 // the UIWebView containing the polls
 - (UIWebView *)pollView;
 
+// load a single poll with the specified ID
+- (void)loadPoll:(NSNumber*)pollID;
+
 // load a poll set with specified ID
 - (void)loadPollSet:(NSNumber*)pollSetID;
 

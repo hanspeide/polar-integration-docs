@@ -58,7 +58,17 @@ username | User's Polar username or email.  Case sensitive.
 - (UIWebView *)pollView;
 ```
 
-#### Loads and displays a poll set
+#### Load and display a single poll
+
+```Objective-C
+- (void)loadPoll:(NSNumber*)pollID;
+```
+
+Param | Description
+-----|------
+pollID | The ID of the poll to load.
+
+#### Load and display a poll set
 
 ```Objective-C
 - (void)loadPollSet:(NSNumber*)pollSetID;

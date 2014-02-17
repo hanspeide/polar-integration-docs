@@ -35,17 +35,28 @@
     return self.polarUsername;
 }
 
-- (void)loadPollSet:(NSNumber*)pollSetID
-{
-    NSString *fullURL = [NSString stringWithFormat:@"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/%@/embedded_polls/iframe?pollset_id=%@", self.polarUsername, pollSetID];
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.pollsWebView loadRequest:requestObj];
-}
-
 - (UIWebView *)pollView
 {
     return self.pollsWebView;
+}
+
+- (void)loadPoll:(NSNumber*)pollID
+{
+    NSString *fullURL = [NSString stringWithFormat:@"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/%@/embedded_polls/iframe?poll_id=%@", self.polarUsername, pollID];
+    [self loadPollsWithURL:fullURL];
+}
+
+- (void)loadPollSet:(NSNumber*)pollSetID
+{
+    NSString *fullURL = [NSString stringWithFormat:@"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/%@/embedded_polls/iframe?pollset_id=%@", self.polarUsername, pollSetID];
+    [self loadPollsWithURL:fullURL];
+}
+
+- (void)loadPollsWithURL:(NSString *)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.pollsWebView loadRequest:requestObj];
 }
 
 @end
