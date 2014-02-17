@@ -15,14 +15,15 @@ Example code:
 NSString *polarUserName = @"jcole";
 
 // instantiate polar instance and add to view
-Polar *polar = [[Polar alloc] init:polarUserName];
-[self.view addSubview:[polar pollView]];
+Polar *polar = [[Polar alloc] init:polarUserName environment:PolarEnvironmentProduction];
+[self.view addSubview:polar.pollsView];
 
 // set the frame for your embed: 300x300 minimum recommended
-[[polar pollView] setFrame:CGRectMake(0, 30, 320, 320)];
+[polar.pollsView setFrame:CGRectMake(0, 30, 320, 320)];
 
-// load your poll set
-[polar loadPollSet:@926];
+// load your polls
+[polar loadPollSet:@926]; // example of a poll set
+// [polar loadPoll:@98779]; // example of a single poll
 ```
 
 Here is an an example project, showing it in action: <br />
@@ -41,12 +42,13 @@ The class files: <br />
 #### Init
 
 ```Objective-C
-- (id)init:(NSString *)username;
+- (id)init:(NSString *)username environment:(PolarEnvironment)polarEnvironment;
 ```
 
 Param | Description
 -----|------
 username | User's Polar username or email.  Case sensitive.
+polarEnvironment | Whether to use the production environment (`PolarEnvironmentProduction`) or test environment `PolarEnvironmentTest`.
 
 #### Get the configured username
 
@@ -57,7 +59,7 @@ username | User's Polar username or email.  Case sensitive.
 #### Get the UIWebView containing the embedded polls
 
 ```Objective-C
-- (UIWebView *)pollView;
+- (UIWebView *)pollsView;
 ```
 
 #### Load and display a single poll

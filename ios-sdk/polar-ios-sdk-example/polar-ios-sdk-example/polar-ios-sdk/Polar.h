@@ -13,14 +13,19 @@
 
 @interface Polar : NSObject
 
+typedef enum {
+    PolarEnvironmentTest,
+    PolarEnvironmentProduction
+} PolarEnvironment;
+
 // initialize with the username for your Polar account
-- (id)init:(NSString *)username;
+- (id)init:(NSString *)username environment:(PolarEnvironment)polarEnvironment;
 
 // the currently configured username
 - (NSString *)username;
 
 // the UIWebView containing the polls
-- (UIWebView *)pollView;
+- (UIWebView *)pollsView;
 
 // load a single poll with the specified ID
 - (void)loadPoll:(NSNumber*)pollID;

@@ -13,50 +13,68 @@
 
 @interface Polar()
 
-@property (nonatomic, strong) NSString *polarUsername;
-@property (nonatomic, strong) UIWebView *pollsWebView;
-
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) UIWebView *pollsView;
+@property (nonatomic, assign) PolarEnvironment environment;
 @end
 
 @implementation Polar
 
-- (id)init:(NSString *)username
+// Public methods
+
+- (id)init:(NSString *)username environment:(PolarEnvironment)environment
 {
     self = [super init];
     if (self) {
         // Initialize self.
-        self.pollsWebView = [[UIWebView alloc] init];
+        _environment = environment;
+        _username = username;
+        _pollsView = [[UIWebView alloc] init];
     }
     return self;
 }
 
 - (NSString *)username
 {
-    return self.polarUsername;
+    return _username;
 }
 
-- (UIWebView *)pollView
+- (UIWebView *)pollsView
 {
-    return self.pollsWebView;
+    return _pollsView;
 }
 
 - (void)loadPoll:(NSNumber*)pollID
 {
-    NSString *fullURL = [NSString stringWithFormat:@"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/%@/embedded_polls/iframe?poll_id=%@", self.polarUsername, pollID];
+    NSString *fullURL = [NSString stringWithFormat:@"%@/publishers/%@/embedded_polls/iframe?poll_id=%@", [self baseURLforEnvironment], self.username, pollID];
     [self loadPollsWithURL:fullURL];
 }
 
 - (void)loadPollSet:(NSNumber*)pollSetID
 {
-    NSString *fullURL = [NSString stringWithFormat:@"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/%@/embedded_polls/iframe?pollset_id=%@", self.polarUsername, pollSetID];
+    NSString *fullURL = [NSString stringWithFormat:@"%@/publishers/%@/embedded_polls/iframe?pollset_id=%@", [self baseURLforEnvironment], self.username, pollSetID];
     [self loadPollsWithURL:fullURL];
 }
 
+// Private methods
+
 - (void)loadPollsWithURL:(NSString *)urlString
 {
+    NSLog(@"loading polls for: %@", urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.pollsWebView loadRequest:requestObj];
+    [self.pollsView loadRequest:requestObj];
+}
+
+- (NSString *)baseURLforEnvironment
+{
+    if (self.environment == PolarEnvironmentTest) {
+        return @"http://polar-rails-staging.herokuapp.com/api/v4";
+    } else if (self.environment == PolarEnvironmentProduction) {
+        return @"http://assets-polarb-com.a.ssl.fastly.net/api/v4";
+    } else {
+        return nil;
+    }
 }
 
 @end

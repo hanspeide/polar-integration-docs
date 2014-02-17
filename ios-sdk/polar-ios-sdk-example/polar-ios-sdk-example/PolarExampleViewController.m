@@ -31,11 +31,12 @@
     NSString *polarUserName = @"jcole";
     
     // instantiate polar instance and add to view
-    Polar *polar = [[Polar alloc] init:polarUserName];
-    [self.view addSubview:[polar pollView]];
+    Polar *polar = [[Polar alloc] init:polarUserName environment:PolarEnvironmentProduction];
+
+    [self.view addSubview:polar.pollsView];
     
     // set the frame for your embed: 300x300 minimum recommended
-    [[polar pollView] setFrame:CGRectMake(0, 30, 320, 320)];
+    [polar.pollsView setFrame:CGRectMake(0, 30, 320, 320)];
     
     // load your polls
     [polar loadPollSet:@926]; // example of a poll set
