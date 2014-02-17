@@ -1,11 +1,14 @@
 ## iOS SDK
 
-The iOS SDK is a drop-in Objective-C class that you can use in your iOS project.  
+![Example of Polar iOS SDK integration](https://polar-production-web-assets.s3.amazonaws.com/api-docs/example-polar-ios-sdk.png)
 
-Simply drop these classes into your iOS project:
-[Polar iOS SDK classes](polar-ios-sdk-example/polar-ios-sdk-example/polar-ios-sdk)
+The iOS SDK consists of a Cocoa Touch class that you can use in your iOS project.
 
-Example:
+The primary class is `Polar`.  You instantiate an instance of Polar with your Polar website username.  The instance of `Polar` then creates a UIWebView that will contain the embedded polls.  You can get access to the UIWebview via the `pollView` attribute.  Add this UIWebView to your app in any way you would normally use a UIWebView.  
+
+Note that the minimum recommended size for the `pollView` UIWebView is 300x300.
+
+Example code:
 
 ```Objective-C
 // replace this with the username for your Polar account
@@ -22,5 +25,41 @@ Polar *polar = [[Polar alloc] init:polarUserName];
 [polar loadPollSet:@926];
 ```
 
-[Example of iOS SDK integration](polar-ios-sdk-example)
+Here is an an example project, showing it in action: <br />
+[Example project](polar-ios-sdk-example)
 
+The class files: <br />
+[Polar.h](polar-ios-sdk-example/polar-ios-sdk-example/polar-ios-sdk/Polar.h) <br />
+[Polar.m](polar-ios-sdk-example/polar-ios-sdk-example/polar-ios-sdk/Polar.m)
+
+
+---
+
+### Polar Class API
+
+
+### Instance methods
+
+
+#### Init
+
+```Objective-C
+- (id)init:(NSString *)username;
+```
+
+Param | Description
+-----|------
+username | User's Polar username or email.  Case sensitive.
+
+
+#### Get a poll set
+
+Loads and displays a poll set for the given identifier.
+
+```Objective-C
+- (void)loadPollSet:(NSNumber*)pollSetID;
+```
+
+Param | Description
+-----|------
+pollSetID | The ID of the poll set to load.
