@@ -13,6 +13,9 @@
 
 @interface Polar()
 
+@property (nonatomic, strong) NSString *polarUsername;
+@property (nonatomic, strong) UIWebView *pollsWebView;
+
 @end
 
 @implementation Polar
@@ -22,17 +25,27 @@
     self = [super init];
     if (self) {
         // Initialize self.
-        self.pollView = [[UIWebView alloc] init];
+        self.pollsWebView = [[UIWebView alloc] init];
     }
     return self;
 }
 
+- (NSString *)username
+{
+    return self.polarUsername;
+}
+
 - (void)loadPollSet:(NSNumber*)pollSetID
 {
-    NSString *fullURL = [NSString stringWithFormat:@"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/%@/embedded_polls/iframe?pollset_id=%@", self.accountUserName, pollSetID];
+    NSString *fullURL = [NSString stringWithFormat:@"http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/%@/embedded_polls/iframe?pollset_id=%@", self.polarUsername, pollSetID];
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.pollView loadRequest:requestObj];
+    [self.pollsWebView loadRequest:requestObj];
+}
+
+- (UIWebView *)pollView
+{
+    return self.pollsWebView;
 }
 
 @end

@@ -32,14 +32,9 @@ The class files: <br />
 [Polar.h](polar-ios-sdk-example/polar-ios-sdk-example/polar-ios-sdk/Polar.h) <br />
 [Polar.m](polar-ios-sdk-example/polar-ios-sdk-example/polar-ios-sdk/Polar.m)
 
-
 ---
 
 ### Polar Class API
-
-
-### Instance methods
-
 
 #### Init
 
@@ -51,10 +46,19 @@ Param | Description
 -----|------
 username | User's Polar username or email.  Case sensitive.
 
+#### Get the configured username
 
-#### Get a poll set
+```Objective-C
+- (NSString *)username;
+```
 
-Loads and displays a poll set for the given identifier.
+#### Get the UIWebView containing the embedded polls
+
+```Objective-C
+- (UIWebView *)pollView;
+```
+
+#### Loads and displays a poll set
 
 ```Objective-C
 - (void)loadPollSet:(NSNumber*)pollSetID;

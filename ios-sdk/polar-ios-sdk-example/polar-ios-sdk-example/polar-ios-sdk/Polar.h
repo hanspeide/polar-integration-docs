@@ -13,13 +13,16 @@
 
 @interface Polar : NSObject
 
-@property (nonatomic, strong) NSString *accountUserName;
-@property (nonatomic, strong) UIWebView *pollView;
-
-// the username for your Polar account
+// initialize with the username for your Polar account
 - (id)init:(NSString *)username;
 
-// the poll set to load
+// the currently configured username
+- (NSString *)username;
+
+// the UIWebView containing the polls
+- (UIWebView *)pollView;
+
+// load a poll set with specified ID
 - (void)loadPollSet:(NSNumber*)pollSetID;
 
 @end
