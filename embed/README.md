@@ -7,6 +7,23 @@ The script tag is the recommended approach, since it can resize the embed based 
 Either way, once the embedded polls container size is set, Polar will responsively size the poll content for the container: <br />
 [Example of responsive sizing](http://polarb.com/publishers/poll_sets/926/preview)
 
+### Getting the tags
+
+You can get an embed tag for your poll or poll set in two ways:  
+
+* Using the embed tag examples described below and customizing for your content
+* Logging into the Polar website and copying the embed tags we create for you
+
+Either approach should result in the same embed tag.  On the website, we simply show you the correctly customized tag for you.
+
+To get the tag from the website, first log in.  Then, click on the "Share" or "Publish" links on any poll or poll set.  You will see a page like the following with the embed tag.  Simply copy the tag and use on your site.
+
+![Example of embed code tag in website](https://polar-production-web-assets.s3.amazonaws.com/api-docs/embed-code-example.png)
+
+### Testing environment
+
+If you want to test creating an embedding content in a non-production environment, simply log into [Polar's test site](https://polar-rails-staging.herokuapp.com/join) and create an account there.  Any polls, poll sets, or votes you create there will show up only on the test site.  The examples below describe how to modify your tags for the testing environments.
+
 ### Using the `<script>` tag
 
 This is the recommended method, as Polar can resize to the alloted space on your page.  Customization is done via HTML5 data tags.  
@@ -26,6 +43,18 @@ data-poll-id | number | optional | Poll ID. Use this parameter if you want to em
 data-placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".
 
 **Note:** one of either `data-poll-set`, `data-poll-id`, or `data-placement` is required.  Use `data-placement` when you want don't want to embed a specific poll or poll set.  Instead, this allows you to swap in a new poll or poll set to this placement instantaneously via the Polar website.
+
+If you want test your embed against Polar's **testing** server, just modify the `src` attribute like the following:
+
+**Production** <br />
+<pre>
+http://assets-polarb-com.a.ssl.fastly.net/assets/polar-embedded.js
+</pre>
+
+**Testing** <br />
+<pre>
+https://polar-rails-staging.herokuapp.com/assets/polar-embedded.js
+</pre>
   
 See the included [test\_script\_embed.html](test_script_embed.html) web page in this repository for a working eample.
 
@@ -49,6 +78,18 @@ poll_id | number | optional | Poll ID. Use this parameter if you want to embed a
 placement | string | optional | Name you created for the placement on your site, e.g. "home-page" or "sidebar".
 
 **Note:** one of either `pollset_id` or `poll_id` or `placement` is required.  Use `placement` when you want don't want to embed a specific poll or poll set.  Instead, this allows you to swap in a new poll or poll set to this placement instantaneously via the Polar website.
+
+If you want test your embed against Polar's **testing** server, just modify the `src` attribute like the following:
+
+**Production** <br />
+<pre>
+http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers
+</pre>
+
+**Testing** <br />
+<pre>
+https://polar-rails-staging.herokuapp.com/api/v4/publishers
+</pre>
 
 See the included [test\_iframe\_embed.html](test_iframe_embed.html) web page in this repository for a working eample.
 
