@@ -1,6 +1,6 @@
 ## Polar iOS SDK
 
-![Example of Polar iOS SDK integration](https://polar-production-web-assets.s3.amazonaws.com/api-docs/example-polar-ios-sdk.png)
+![Example of Polar iOS SDK integration](https://polar-api-docs-assets.s3.amazonaws.com/example-polar-ios-sdk.png)
 
 The iOS SDK consists of a Cocoa Touch class that you can use in your iOS project.
 
