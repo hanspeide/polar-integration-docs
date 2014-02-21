@@ -9,16 +9,23 @@ Either way, once the embedded polls container size is set, Polar will responsive
 
 ### Getting the tags
 
-You can get an embed tag for your poll or poll set in two ways:  
+Your embed tag must specify one of the following:
 
-* Using the embed tag examples described below and customizing for your content
-* Logging into the Polar website and copying the embed tags we create for you
+* A **poll** to display
+* A **poll set** to display
+* A named **placement** that you have created
 
-Either approach should result in the same embed tag.  On the website, we simply show you the correctly customized tag for you.
+**Polls and Poll Sets**
 
-To get the tag from the website, first log in.  Then, click on the "Share" or "Publish" links on any poll or poll set.  You will see a page like the following with the embed tag.  Simply copy the tag and use on your site.
+If you know the poll or poll set you want to embed, you can simply customize the script tags with the unique numeric ID's for the polls or poll sets, as described in the sections below.  The ID's for the polls and poll sets can be found on the polarb.com website either in the [URL for the poll or poll set](http://polarb.com/publishers/results/poll_sets/926), or in the embed code displayed when you click "share" or "publish":
 
-![Example of embed code tag in website](https://polar-production-web-assets.s3.amazonaws.com/api-docs/embed-code-example.png)
+![Example of embed code tag in website](https://polar-api-docs-assets.s3.amazonaws.com/embed-code-example.png)
+
+**Placements**
+
+If you want to change the poll or poll set on your website *without* changing the embed tag, use a placement.  You can have a variety of named placements, like "home page", "sports page", "entertainment section", etc., that you maintain on the Polarb.com website.  Then, through the Polarb.com website, you can change which poll set should show in each named placement.
+
+![Example of embed placement in website](https://polar-api-docs-assets.s3.amazonaws.com/embed-placement.png)
 
 ### Testing environment
 
