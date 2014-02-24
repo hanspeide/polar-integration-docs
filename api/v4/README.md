@@ -29,14 +29,13 @@ Create a production account:
 * [Get user information](#userinfo)
 * [Authentication](#authentication)
 * [Get a list of recent polls](#recentpolls)
+* [Get a list of polls created by user](#poll_ids_created)
 * [Vote on a poll](#voting)
 * [Create a poll](#createpoll)
 
 ### <a name="userinfo"></a> Get user information
 
 Get credentials for the current user viewing the polls
-
-**If the user is not authenticated**
 
 <pre>
 GET /users/me
@@ -65,6 +64,9 @@ Returns the following if the user **is authenticated:**
   "authToken": "xxAuthTokenHerexx",
 }
 ```
+
+**Example** <br />
+[https://polarb.com/api/v4/users/me](https://polarb.com/api/v4/users/me)
 
 ### <a name="authentication"></a> Authentication
 
@@ -178,6 +180,32 @@ before_poll_id | number | optional | Get the next set of polls prior to this pol
   ...
 ]
 ```
+
+**Example** <br />
+[https://polarb.com/api/v4/polls](https://polarb.com/api/v4/polls)
+
+### <a name="poll_ids_created"></a> Get a list of polls created by user
+
+Get a list of all polls created by a user on Polar.  Returns a set of poll_ids.  
+
+Authentication is not required for this endpoint.
+
+<pre>
+GET /users/:username/poll_ids_created
+</pre>
+
+Param | Type | Required | Description
+-----|------|----------|--------------
+username | string | required | User's Polar username (case insensitive).
+
+```JSON
+{
+  "poll_ids": [856, 855, 852, 851, 850, 849, 848]
+}
+```
+
+**Example** <br />
+[https://polarb.com/api/v4/users/jcole/api/v4/users/jcole/poll\_ids\_created](https://polarb.com/api/v4/users/jcole/poll_ids_created)
 
 ### <a name="voting"></a> Vote on a poll
 
