@@ -205,7 +205,7 @@ username | string | required | User's Polar username (case insensitive).
 ```
 
 **Example** <br />
-[https://polarb.com/api/v4/users/jcole/api/v4/users/jcole/poll\_ids\_created](https://polarb.com/api/v4/users/jcole/poll_ids_created)
+[https://polarb.com/api/v4/users/jcole/poll\_ids\_created](https://polarb.com/api/v4/users/jcole/poll_ids_created)
 
 ### <a name="voting"></a> Vote on a poll
 
