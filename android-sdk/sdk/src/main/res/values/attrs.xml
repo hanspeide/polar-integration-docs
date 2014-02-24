@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Polar">
+        <attr name="username" format="string"/>
+        <attr name="pollId" format="integer" />
+        <attr name="pollSetId" format="integer"/>
+        <attr name="environment" format="string"/>
+    </declare-styleable>
+</resources> 

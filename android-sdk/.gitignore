@@ -1,0 +1,6 @@
+.gradle
+/local.properties
+/.idea/*
+.DS_Store
+sdk/sdk.iml
+polarwebview-sdk.iml
