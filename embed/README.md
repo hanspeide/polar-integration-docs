@@ -119,3 +119,58 @@ We aim to support the last 3 major releases of each popular browser.
 * Firefox (last three major releases)
 * Chrome (last three major releases)
 * Internet Explorer (IE 9, 10, 11)
+ 
+
+### Using the JavaScript API
+
+For complete control over the Polar embedded polls experience, we provide a JavaScript application and API.  Instead of embedding the self-render `polar-embedded.js` scrip on your page, you can load the `polar-embedded-standalone.js` application.  This provides the actual `EmbeddedPollsApp` component for you to customize.
+
+```html
+<!-- This version does not bundle jQuery, use Polar's jQuery 2.0.3 or your own -->
+<script src="http://assets-polarb-com.a.ssl.fastly.net/assets/jquery-2.0.3.min.js"></script>
+<!-- Load the PolarEmbeddedPolls application via the polar-embedded-standalone.js library -->
+<script src="http://assets-polarb-com.a.ssl.fastly.net/assets/polar-embedded-standalone.js"></script>
+
+<script>
+  $(document).ready(function() {
+    var target = $('.polar-polls');
+    var polarOptions = {
+      pollId: '1234-is-this-awesome'
+    };
+    
+    //Instantiate new EmbeddedPollsApp showing a single Poll by ID
+    var polar = new EmbeddedPollsApp(target, polarOptions);
+    polar.init();
+  });
+</script>
+
+<div class="polar-polls">
+</div>
+```
+
+**EmbeddedPollsApp Options**
+
+The following options can be set in the options has passed in when initializing the `EmbeddedPollsApp`.
+
+* `pollId` - Embed a Poll by ID (eg: `1234-what-is-awesome`)
+* `pollSetId` - Embed a Poll Set by ID (eg: `1234-this-is-a-pollset`)
+* `tag` - Embed Polls tagged with `tag` (eg: `travel`)
+* `placement` - Embed a named Placement, whose content can be filled in the Polar Publisher Portal (eg: `homepage`)
+* `callbacks` - A hash of events and associated JS callbacks (eg: `{ vote: function(data) { ... }}`)
+
+
+**EmbeddedPollsApp Events**
+
+The `EmbeddedPollsApp` fires a number of events and customers can provide callbacks to be notified when an event occurs.  Every callback takes a data hash as a single parameter and provides different items related to the event.
+
+* `loaded({app})` - After the `EmbeddedPollsApp` has completed loading, the `loaded` event is fired. `app` parameter in this event is the instance of the EmbeddedPollsApp that has just loaded.
+* `vote({pollID, choice})` - Whenever a user votes on a poll, the `vote` event is fired with the `pollID` and `choice` parameters identifying which choice the user selected on this poll.
+* `navigate({direction, currentPollID, nextPollID})` - When a user transitions from one poll to another, the `navigate` event is fired with the following parameters: `direction` as `next` or `previous`, `currentPollID` as the active poll before the navigation, and `nextPollID` as the new poll being transitioned to.
+* `lastPoll` - When the user has voted/navigated through all of the available polls.
+
+**EmbeddedPollsApp instance API**
+
+The following methods can be called on a loaded `EmbeddedPollsApp` instance.
+
+* `getUser()` - Returns a hash identifying the active user, either a registered Polar user (eg: `{ userID: 1234 }`) or the current anonymous user ID (eg: `{ anonymousUserID: 'bef9dcdc...' }`)
+* `getVotes()` - Returns an array of Vote hashes, containing the poll and choice IDs for that vote (eg: `[{ pollID: 1234, choice: 1 }, ...]`)
