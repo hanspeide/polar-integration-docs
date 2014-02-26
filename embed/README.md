@@ -111,3 +111,11 @@ The main Polar Embedded Javascript library is concatenated, minified, and gzippe
 Where the tag is placed on the page, an iFrame is added to the page DOM.  Polar Embedded then renders its HTML/CSS into this iFrame locally without network requests.  Behavior within Polar Embedded is implemented using an embedded jQuery in compatibility mode isolated from the parent page. 
 
 Responsive design and custom publisher CSS allow Polar to flow with your layout at any screen size.  CSS may be applied to the Polar Embedded container to position/size the polls on your page.  Internal CSS can be applied to the Polar Embedded iFrame to use custom fonts, colors, look, and feel of the application to match your site.  Polar Polls can handle screens or web cards as small as 300px wide, but scale up to full size desktop layouts for articles.
+
+### Browser Support
+
+We aim to support the last 3 major releases of each popular browser.
+
+* Firefox (last three major releases)
+* Chrome (last three major releases)
+* Internet Explorer (IE 9, 10, 11)
