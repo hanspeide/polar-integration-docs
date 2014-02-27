@@ -121,7 +121,7 @@ We aim to support the last 3 major releases of each popular browser.
 * Internet Explorer (IE 9, 10, 11)
  
 
-### Using the JavaScript API
+### <a name="javascript-api"></a> Using the JavaScript API
 
 For complete control over the Polar embedded polls experience, we provide a JavaScript application and API.  Instead of embedding the self-render `polar-embedded.js` scrip on your page, you can load the `polar-embedded-standalone.js` application.  This provides the actual `EmbeddedPollsApp` component for you to customize.
 
